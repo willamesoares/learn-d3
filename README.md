@@ -6,6 +6,8 @@ One of the biggest advantages of this project setup is that it comes with the [w
 
 Also, loaders for Babel and Sass are already configured so you are able to take advantages of ES6 features and structure your stylesheets in a fashionable way as well :)
 
+If you want to read more about this project structure and the concepts behind it, you can take a look at [this related post](http://willamesoares.com/d3/setting-up-d3js-with-babel-and-webpack.html).
+
 ## Setup
 
 If you already have [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm) installed in your machine, you can simply run the commands listed in the steps below.
