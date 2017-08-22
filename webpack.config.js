@@ -2,14 +2,21 @@ const path = require('path')
 const webpack = require('webpack')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+const paths = {
+  src: path.join(__dirname, 'src'),
+  dist: path.join(__dirname, 'dist'),
+  data: path.join(__dirname, 'data')
+}
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
+  context: paths.src,
   entry: ['./app.js', './main.scss'],
   output: {
     filename: 'app.bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist',
+    path: paths.dist,
+    publicPath: 'dist',
   },
   module: {
     rules: [
@@ -30,7 +37,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    contentBase: paths.dist,
     compress: true,
     port: '4800',
     stats: 'errors-only',
@@ -40,5 +47,11 @@ module.exports = {
       filename: 'main.bundle.css',
       allChunks: true,
     }),
+    new CopyWebpackPlugin([
+      {
+        from: paths.data,
+        to: paths.dist + '/data'
+      }
+    ])
   ],
 }
