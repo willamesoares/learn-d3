@@ -54,6 +54,21 @@ $ yarn run build
 
 If everything goes alright, then you are ready to start some D3 hacking. Have fun! :)
 
+## Loading external data
+As loading external data is one of the most common things in a D3 project, this setup includes a basic flow to serve data files, such as JSON and CSV.  
+The `webpack.config.js` file includes a step in which all the files living in the `data` folder are copied to the `dist` folder so you can require them as you want. The default folder is called `data` and lives in the project root. If you want to change the name or location for that folder you just have to update the constant called `paths` in the `webpack.config.js` to match with your desired folder location.
+
+In the `app.js` file you can find an example on loading external files using D3. At the moment you clone this repo, the `sample.csv` file is already copied for you in the `dist` folder. However, if you want to add more data files or change the existing one, you will have to build the project so you will have those modifications available for you in the `dist` folder.
+
+```js
+// Loading external data
+d3.csv('/data/sample.csv', (error, dataset) => {
+  dataset.forEach((data) => {
+    console.log(data)
+  })
+})
+```
+
 ## Useful resources
  - [Scott Murray D3 Tutorials](http://alignedleft.com/tutorials/d3/)
  - [25+ Resources to Learn D3.js from Scratch](https://blog.modeanalytics.com/learn-d3/)
