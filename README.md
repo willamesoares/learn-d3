@@ -1,4 +1,4 @@
-![header](http://www.clipular.com/c/5725285858410496.png?k=HevaqkhU7K3Svt856Pk00KgiAyY)
+# Learning D3.js - The basics
 
 Although this repository was created for learning purposes, it can be easily used as a boilerplate for [D3.js](https://d3js.org/) projects.
 
