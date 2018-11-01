@@ -25,7 +25,10 @@ module.exports = {
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015', 'stage-0'] },
+          options: { 
+            presets: ['es2015', 'stage-0'], 
+            plugins: ["transform-runtime"],
+          }
         }],
       },
       {
@@ -42,6 +45,7 @@ module.exports = {
     port: '4800',
     stats: 'errors-only',
   },
+  devtool: "#inline-source-map",
   plugins: [
     new ExtractTextPlugin({
       filename: 'main.bundle.css',
@@ -52,6 +56,6 @@ module.exports = {
         from: paths.data,
         to: paths.dist + '/data'
       }
-    ])
+    ]),
   ],
 }
