@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --hot --inline --progress",
-    "build": "webpack -p --config webpack.config.js --hide-modules"
+    "build": "webpack -p --config webpack.prod.config.js --hide-modules"
   },
   "repository": {
     "type": "git",
