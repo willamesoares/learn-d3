@@ -15,7 +15,7 @@ module.exports = {
   entry: ['./app.js', './main.scss'],
   output: {
     filename: 'app.bundle.js',
-    path: paths.dist,
+    path: path.resolve(paths.dist,"dist"),
     publicPath: 'dist',
   },
   module: {
@@ -27,7 +27,6 @@ module.exports = {
           loader: 'babel-loader',
           options: { 
             presets: ['es2015', 'stage-0'], 
-            plugins: ["transform-runtime"],
           }
         }],
       },
@@ -45,7 +44,6 @@ module.exports = {
     port: '4800',
     stats: 'errors-only',
   },
-  devtool: "#inline-source-map",
   plugins: [
     new ExtractTextPlugin({
       filename: 'main.bundle.css',
@@ -59,3 +57,4 @@ module.exports = {
     ]),
   ],
 }
+
